@@ -10,14 +10,14 @@ theme:
   name: material
   palette:
     - scheme: default # 日间模式
-      primary: black # 上方的
-      accent: blue # 链接等可交互元件的高亮色
+      primary: indigo # 上方的
+      accent: orange # 链接等可交互元件的高亮色
       toggle:
         icon: material/weather-night # 图标
         name: 切换至夜间模式 # 鼠标悬浮提示
     - scheme: slate # 夜间模式
-      primary: black
-      accent: blue
+      primary: indigo
+      accent: orange
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
@@ -69,7 +69,7 @@ nav:
 # [Extensions]
 plugins:
   - search: # 现在还不支持中文搜索 支持之后可以设置语言
-    # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
+      # insider已经支持中文的分词搜索了 https://squidfunk.github.io/mkdocs-material/blog/2022/chinese-search-support/
       lang:
         - en
         - ja
