@@ -53,18 +53,18 @@ nav:
   - 博客:
       - blog/index.md
       - IDEA:
-          - IDEA常用技巧: blog/IDEA/idea必知必会技巧.md
+          - IDEA常用技巧: blog/IDEA/idea_tip.md
       - 并发编程:
-          - 线程的创建与常用api: blog/ConcurrentProgramming/线程创建与常用api.md
+          - 线程的创建与常用api: blog/ConcurrentProgramming/thread_createandapi.md
       - java:
-          - 深入理解注解: blog/JavaBasic/【JAVA基础】深入理解注解.md
+          - 深入理解注解: blog/JavaBasic/javabasic_annotation.md
   - 计算机基础知识:
       - computerBasicInfo/index.md
       - 设计模式:
-          - 设计模式-七大设计原则: computerBasicInfo/DesignPatterns/设计模式之七大设计原则.md
-          - 创建型设计模式-单例设计模式: computerBasicInfo/DesignPatterns/结构型设计模式之代理模式.md
-          - 创建型设计模式-原型设计模式: computerBasicInfo/DesignPatterns/创建型设计模式之原型模式.md
-          - 结构型设计模式-代理模式: computerBasicInfo/DesignPatterns/结构型设计模式之代理模式.md
+          - 设计模式-七大设计原则: computerBasicInfo/DesignPatterns/structure_proxy.md
+          - 创建型设计模式-单例设计模式: computerBasicInfo/DesignPatterns/create_singlton.md
+          - 创建型设计模式-原型设计模式: computerBasicInfo/DesignPatterns/create_Prototype.md
+          - 结构型设计模式-代理模式: computerBasicInfo/DesignPatterns/structure_proxy.md
 
 # [Extensions]
 plugins:
