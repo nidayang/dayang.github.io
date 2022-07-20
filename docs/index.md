@@ -1,17 +1,18 @@
-# Welcome to MkDocs
+# 你好
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+这里是洋子的个人网站 <https://nidayang.github.io>
 
-## Commands
+## 简介
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+个人编程学习积累用，不定期的增加一些学习总结和个人总结的文章
 
-## Project layout
+## 使用
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+可以通过导航栏或者搜索框检索相关信息，目前搜索框不怎么兼容中文。
+
+## 站点建立
+
+- 部署：`github Page`
+- 博客：`mkdocs`
+- 主题：`Material for MkDocs`
+- 参考博客：<https://squidfunk.github.io/mkdocs-material/>

@@ -8,16 +8,16 @@ site_description: 大洋的个人网站
 ## [top]
 theme:
   name: material
-  palette: 
+  palette:
     - scheme: default # 日间模式
-      primary: indigo # 上方的
-      accent: orange # 链接等可交互元件的高亮色
+      primary: black # 上方的
+      accent: blue # 链接等可交互元件的高亮色
       toggle:
         icon: material/weather-night # 图标
         name: 切换至夜间模式 # 鼠标悬浮提示
     - scheme: slate # 夜间模式
-      primary: indigo
-      accent: orange
+      primary: black
+      accent: blue
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
@@ -34,11 +34,11 @@ theme:
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
 
 ## [top-right corner]
-repo_url: https://github.com/nidayang/nidayang.github.io # 右上角点击跳转的链接
+# 右上角点击跳转的链接
+repo_url: https://github.com/nidayang/nidayang.github.io
 repo_name: nidayang.github.io # 右上角的名字
 ## [bottom-left corner]
 copyright: Copyright &copy; 2022 倪大洋 # 左下角的版权声明
-
 ## [bottom-right corner]
 extra:
   social: # icons
@@ -48,14 +48,21 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/nidayang
       name: GitHub | dayang
-      
-# [Navigtion]
 
+# [Navigtion]
 nav:
-  - 博客: 
-    - blog/index.md 
-    - 设计模式:
-      - 设计模式-七大设计原则: blog\DesignPatterns\设计模式之七大设计原则.md
-      - 创建型设计模式-单例设计模式: blog\DesignPatterns\结构型设计模式之代理模式.md
-      - 创建型设计模式-原型设计模式: blog\DesignPatterns\创建型设计模式之原型模式.md
-      - 结构型设计模式-代理模式: blog\DesignPatterns\结构型设计模式之代理模式.md
+  - 博客:
+      - blog/index.md
+      - IDEA:
+          - IDEA常用技巧: blog\IDEA\idea必知必会技巧.md
+      - 并发编程:
+          - 线程的创建与常用api: blog\ConcurrentProgramming\线程创建与常用api.md
+      - java:
+          - 深入理解注解: blog\JavaBasic\【JAVA基础】深入理解注解.md
+  - 计算机基础知识:
+      - computerBasicInfo/index.md
+      - 设计模式:
+          - 设计模式-七大设计原则: computerBasicInfo\DesignPatterns\设计模式之七大设计原则.md
+          - 创建型设计模式-单例设计模式: computerBasicInfo\DesignPatterns\结构型设计模式之代理模式.md
+          - 创建型设计模式-原型设计模式: computerBasicInfo\DesignPatterns\创建型设计模式之原型模式.md
+          - 结构型设计模式-代理模式: computerBasicInfo\DesignPatterns\结构型设计模式之代理模式.md
