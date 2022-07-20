@@ -10,14 +10,14 @@ theme:
   name: material
   palette:
     - scheme: default # 日间模式
-      primary: indigo # 上方的
-      accent: orange # 链接等可交互元件的高亮色
+      primary: black # 上方的
+      accent: blue # 链接等可交互元件的高亮色
       toggle:
         icon: material/weather-night # 图标
         name: 切换至夜间模式 # 鼠标悬浮提示
     - scheme: slate # 夜间模式
-      primary: indigo
-      accent: orange
+      primary: black
+      accent: blue
       toggle:
         icon: material/weather-sunny
         name: 切换至日间模式
@@ -53,18 +53,18 @@ nav:
   - 博客:
       - blog/index.md
       - IDEA:
-          - IDEA常用技巧: blog\IDEA\idea必知必会技巧.md
+          - IDEA常用技巧: blog/IDEA/idea必知必会技巧.md
       - 并发编程:
-          - 线程的创建与常用api: blog\ConcurrentProgramming\线程创建与常用api.md
+          - 线程的创建与常用api: blog/ConcurrentProgramming/线程创建与常用api.md
       - java:
-          - 深入理解注解: blog\JavaBasic\【JAVA基础】深入理解注解.md
+          - 深入理解注解: blog/JavaBasic/【JAVA基础】深入理解注解.md
   - 计算机基础知识:
       - computerBasicInfo/index.md
       - 设计模式:
-          - 设计模式-七大设计原则: computerBasicInfo\DesignPatterns\设计模式之七大设计原则.md
-          - 创建型设计模式-单例设计模式: computerBasicInfo\DesignPatterns\结构型设计模式之代理模式.md
-          - 创建型设计模式-原型设计模式: computerBasicInfo\DesignPatterns\创建型设计模式之原型模式.md
-          - 结构型设计模式-代理模式: computerBasicInfo\DesignPatterns\结构型设计模式之代理模式.md
+          - 设计模式-七大设计原则: computerBasicInfo/DesignPatterns/设计模式之七大设计原则.md
+          - 创建型设计模式-单例设计模式: computerBasicInfo/DesignPatterns/结构型设计模式之代理模式.md
+          - 创建型设计模式-原型设计模式: computerBasicInfo/DesignPatterns/创建型设计模式之原型模式.md
+          - 结构型设计模式-代理模式: computerBasicInfo/DesignPatterns/结构型设计模式之代理模式.md
 
 # [Extensions]
 plugins:
@@ -81,8 +81,8 @@ markdown_extensions:
   - toc:
       permalink: true # 固定标题位置为当前位置
   - pymdownx.highlight: # 代码块高亮
-      # linenums: true # 显示行号
-      # auto_title: true # 显示编程语言名称
+    # linenums: true # 显示行号
+    # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
 extra_javascript:
