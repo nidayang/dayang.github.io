@@ -50,9 +50,10 @@ extra:
       name: GitHub | dayang
       
 # [Navigtion]
+
 nav:
-    - 博客:
-    - BLOG/index.md
+  - 博客: 
+    - blog/index.md 
     - 设计模式:
       - 设计模式-七大设计原则: blog\DesignPatterns\设计模式之七大设计原则.md
       - 创建型设计模式-单例设计模式: blog\DesignPatterns\结构型设计模式之代理模式.md
