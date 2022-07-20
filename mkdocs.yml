@@ -32,7 +32,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
-
 ## [top-right corner]
 # 右上角点击跳转的链接
 repo_url: https://github.com/nidayang/nidayang.github.io
@@ -81,9 +80,9 @@ markdown_extensions:
   - attr_list # 给图片后面添加{width="300"}设置大小
   - toc:
       permalink: true # 固定标题位置为当前位置
-  - pymdownx.highlight: # 代码块高亮
-    # linenums: true # 显示行号
-    # auto_title: true # 显示编程语言名称
+  - pymdownx.highlight:# 代码块高亮
+      # linenums: true # 显示行号
+      # auto_title: true # 显示编程语言名称
   - pymdownx.superfences # 代码块高亮插件
   - meta # 支持Markdown文件上方自定义标题标签等
 extra_javascript:
@@ -96,3 +95,4 @@ extra_javascript:
 extra_css:
   - mkdocs/css/no-footer.css # 不使用底部的翻页
   - mkdocs/css/unordered-list-symbols.css # multiplt unordered list symbols
+
