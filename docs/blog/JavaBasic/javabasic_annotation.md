@@ -1,13 +1,22 @@
 # 【JAVA基础】注解
 
-## 1 什么是注解？
+## 为什么会出现注解？
 
-继承Annotation接口的接口。
+注解对标的是xml配置，相较于之前繁琐的xml的配置，注解更为高效，但是提高了耦合度。
 
-- 本身没有任何含义，就是一个标记。
-- 关键在于**目的**（标注注解的目的）--->**行为**（与之匹配的行为）
+## 什么是注解？
 
-### 1.1 注解的样例
+注解是一个特殊的接口，是继承Annotation接口的接口。本身没有任何含义，就是一个标记。
+
+如果将一个class**类联**想成一个书本，而注解更像是我们人为在书本上做的标记（这个标记对于书本自身的内容是没有影响的），上学的时候每个人都有一套自己的标注的规矩，这个和注解的规矩是一样的。
+
+| class类  | 书本                           |
+| -------- | ------------------------------ |
+| 注解     | 标记（人为标注的）             |
+| 元注解   | 属于每个人自己的一套标注的规则 |
+| 内置注解 | 书本自己本身就标注好的注解     |
+
+### 注解的样例
 
 ```java
     @Target({ElementType.METHOD, ElementType.TYPE, ElementType.FIELD})
@@ -21,7 +30,7 @@
     }
 ```
 
-反编译后
+将class字节码反编译后，发现
 
 ```java
 // Decompiled by Jad v1.5.8e2. Copyright 2001 Pavel Kouznetsov.
@@ -46,8 +55,195 @@ static interface Testjava$TestAnno
 }
 ```
 
+## 注解是如何被使用的？
 
+- 编译期间使用
+- 运行期间使用
 
-## 2 获取各种类型上标注的注解
+### 编译期间使用
 
-通过jdk动态代理的对象调用的方法
+主要就是通过元注解自定义的信息，判断注解标注的位置对不对。
+
+### 运行期间使用
+
+在运行的期间生成注解的示例。
+
+但我们调用getAnnotation方法或者其他获得注解的方法的时候，底层是通过Proxy代理生成注解接口的一个实例
+
+- 注解的实例会被放入一个map中，以便在下次用的时候可以直接拿到
+- 是通过动态代理在运行期间实例化注解的接口，实际开发的时候都是用的这个动态代理的对象
+
+```java
+    /**
+     * Returns an annotation of the given type backed by the given
+     * member -> value map.
+     */
+    public static Annotation annotationForMap(final Class<? extends Annotation> type,
+                                              final Map<String, Object> memberValues)
+    {
+        return AccessController.doPrivileged(new PrivilegedAction<Annotation>() {
+            public Annotation run() {
+                return (Annotation) Proxy.newProxyInstance(
+                    type.getClassLoader(), new Class<?>[] { type },
+                    new AnnotationInvocationHandler(type, memberValues));
+           
+```
+
+### 注解反编译的代码
+
+```java
+    @Target({ElementType.METHOD, ElementType.TYPE, ElementType.FIELD})
+    @Retention(RetentionPolicy.RUNTIME)
+    @Documented
+    @interface TestAnnotation {
+
+        int num() default 0;
+
+        String name() default "";
+    }
+```
+
+通过debug拿到的代理类
+
+```java
+// Decompiled by Jad v1.5.8e2. Copyright 2001 Pavel Kouznetsov.
+// Jad home page: http://kpdus.tripod.com/jad.html
+// Decompiler options: packimports(3) fieldsfirst ansi space 
+
+package annotion;
+
+import java.lang.reflect.*;
+
+final class $Proxy1 extends Proxy
+	implements AnnotationDemo.TestAnnotation
+{
+
+	private static Method m1;
+	private static Method m3;
+	private static Method m4;
+	private static Method m2;
+	private static Method m5;
+	private static Method m0;
+
+	public $Proxy1(InvocationHandler invocationhandler)
+	{
+		super(invocationhandler);
+	}
+
+	public final boolean equals(Object obj)
+	{
+		try
+		{
+			return ((Boolean)super.h.invoke(this, m1, new Object[] {
+				obj
+			})).booleanValue();
+		}
+		catch (Error ) { }
+		catch (Throwable throwable)
+		{
+			throw new UndeclaredThrowableException(throwable);
+		}
+	}
+
+	public final String name()
+	{
+		try
+		{
+			return (String)super.h.invoke(this, m3, null);
+		}
+		catch (Error ) { }
+		catch (Throwable throwable)
+		{
+			throw new UndeclaredThrowableException(throwable);
+		}
+	}
+
+	public final int num()
+	{
+		try
+		{
+			return ((Integer)super.h.invoke(this, m4, null)).intValue();
+		}
+		catch (Error ) { }
+		catch (Throwable throwable)
+		{
+			throw new UndeclaredThrowableException(throwable);
+		}
+	}
+
+	public final String toString()
+	{
+		try
+		{
+			return (String)super.h.invoke(this, m2, null);
+		}
+		catch (Error ) { }
+		catch (Throwable throwable)
+		{
+			throw new UndeclaredThrowableException(throwable);
+		}
+	}
+
+	public final Class annotationType()
+	{
+		try
+		{
+			return (Class)super.h.invoke(this, m5, null);
+		}
+		catch (Error ) { }
+		catch (Throwable throwable)
+		{
+			throw new UndeclaredThrowableException(throwable);
+		}
+	}
+
+	public final int hashCode()
+	{
+		try
+		{
+			return ((Integer)super.h.invoke(this, m0, null)).intValue();
+		}
+		catch (Error ) { }
+		catch (Throwable throwable)
+		{
+			throw new UndeclaredThrowableException(throwable);
+		}
+	}
+
+	static 
+	{
+		try
+		{
+			m1 = Class.forName("java.lang.Object").getMethod("equals", new Class[] {
+				Class.forName("java.lang.Object")
+			});
+			m3 = Class.forName("annotion.AnnotationDemo$TestAnnotation").getMethod("name", new Class[0]);
+			m4 = Class.forName("annotion.AnnotationDemo$TestAnnotation").getMethod("num", new Class[0]);
+			m2 = Class.forName("java.lang.Object").getMethod("toString", new Class[0]);
+			m5 = Class.forName("annotion.AnnotationDemo$TestAnnotation").getMethod("annotationType", new Class[0]);
+			m0 = Class.forName("java.lang.Object").getMethod("hashCode", new Class[0]);
+		}
+		catch (NoSuchMethodException nosuchmethodexception)
+		{
+			throw new NoSuchMethodError(nosuchmethodexception.getMessage());
+		}
+		catch (ClassNotFoundException classnotfoundexception)
+		{
+			throw new NoClassDefFoundError(classnotfoundexception.getMessage());
+		}
+	}
+}
+
+```
+
+## 注解到底被放哪了？
+
+疑问就是注解编译的时候到底被放到哪里去了，经过查阅发现，每个class会有一个属性表，这个表用于存放注解相关的信息，这块知识设计jvm，后补。
+
+> 参考
+>
+> https://bbs.huaweicloud.com/blogs/296113
+>
+> https://blog.csdn.net/m0_37609579/article/details/105437332
+>
+> https://www.cnblogs.com/yangming1996/p/9295168.html
