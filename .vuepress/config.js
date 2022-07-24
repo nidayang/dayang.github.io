@@ -1,7 +1,8 @@
 module.exports = {
   title: "",
   description: "",
-  dest: "public",
+  dest: "docs",
+  base: "/",
   head: [
     [
       "link",
