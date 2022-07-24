@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "dayang",
   "scripts": {
+    "deploy": "bash deploy.sh",
     "dev": "vuepress dev",
     "build": "vuepress build docs"
   },
