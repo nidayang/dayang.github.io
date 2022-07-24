@@ -23,7 +23,7 @@ cd docs/.vuepress/dist
 # fi
 
 msg='来自github action的自动部署'
-githubUrl=https://nidayang:${ACCESS_TOKEN}@github.com:nidayang/nidayang.github.io.git
+githubUrl=git@github.com:nidayang/nidayang.github.io.git
 git config --global user.name "nidayang"
 git config --global user.email "1782055745@qq.com"
 
