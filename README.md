@@ -1,25 +1,23 @@
----
-home: true
-heroText: Yang's Blog
-tagline: FALL IN LOVE WITH YOURSELF
-# heroImage: /hero.png
-# heroImageStyle: {
-#   maxWidth: '600px',
-#   width: '100%',
-#   display: block,
-#   margin: '9rem auto 2rem',
-#   background: '#fff',
-#   borderRadius: '1rem',
-# }
-bgImageStyle: { height: "450px" }
-isShowTitleInHome: false
-actionText: Guide
-actionLink: /views/other/guide
-features:
-  - title: Yesterday
-    details: 开发一款看着开心、写着顺手的 vuepress 博客主题
-  - title: Today
-    details: 希望帮助更多的人花更多的时间在内容创作上，而不是博客搭建上
-  - title: Tomorrow
-    details: 希望更多的爱好者能够参与进来，帮助这个主题更好的成长
----
+# 你好
+
+这里是洋子的个人网站 <https://nidayang.github.io>
+
+## 简介
+
+个人编程学习积累用，不定期的增加一些学习总结和个人总结的文章。注意：博客都是当时动笔的时候的认知写出来的，有错有对，大家带着批判的眼光去看即可。
+
+## 站点建立
+
+原先
+
+- 部署：`github Page`
+- 博客：`mkdocs`
+- 主题：`Material for MkDocs`
+- 建站参考博客：
+  - [大佬的 githubPage](https://yang-xijie.github.io/BLOG/Markdown/mkdocs-site/)
+  - [mkdocs 主题](https://squidfunk.github.io/mkdocs-material/)
+
+后来
+
+- 博客：`vuepress`
+- 主题：`vuepress-theme-vdoing`
