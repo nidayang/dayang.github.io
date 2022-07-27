@@ -35,6 +35,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: "设计模式", link: "/pages/0237ef/" },
         ],
       },
+      {
+        text: "鲸鱼",
+        link: "/psychology/",
+        items: [{ text: "心理建设", link: "/pages/e18aeb/" }],
+      },
       // {
       //   text: "页面",
       //   link: "/ui/",
