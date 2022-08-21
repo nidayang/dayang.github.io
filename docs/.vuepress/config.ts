@@ -47,7 +47,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         ],
       },
       {
-        text: "鲸鱼",
+        text: "生活",
         link: "/psychology/",
         items: [{ text: "心理建设", link: "/pages/e18aeb/" }],
       },
