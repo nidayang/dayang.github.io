@@ -43,6 +43,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
           { text: "java集合", link: "/pages/bd6727/" },
           { text: "java常用", link: "/pages/c2ec7e/" },
           { text: "java并发", link: "/pages/c2ec7e/" },
+          { text: "框架", link: "/pages/4409cf/" },
           { text: "微服务相关", link: "/pages/81cd67/" },
         ],
       },
